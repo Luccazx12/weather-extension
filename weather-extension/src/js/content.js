@@ -8,6 +8,7 @@ const pressureElem = document.querySelector(".pressure");
 const humidityElem = document.querySelector(".humidity");
 const temp_maxElem = document.querySelector(".temp_max");
 const temp_minElem = document.querySelector(".temp_min");
+const feels_likeElem = document.querySelector(".feels_like");
 
 //Parameters for fetch
 const options = {
@@ -27,12 +28,13 @@ fetch(url)
         countryElem.innerHTML = `<strong>${result.sys.country}</strong>`;
         cityElem.innerHTML = `<strong>${result.name}</strong>` + ` -`
         descriptionElem.innerHTML = `<strong>${result.weather[0].description}`;
-        cloudsElem.innerHTML = `<span>total de nuvens: </span><br>` +result.clouds.all;
-        tempElem.innerHTML = `<span>Temperatura: </span><br>` +result.main.temp
+        cloudsElem.innerHTML = `<span>total de nuvens: </span><br>` + result.clouds.all;
+        tempElem.innerHTML = `<span>Temperatura: </span><br>` + result.main.temp
         pressureElem.innerHTML = `<span>Pressão: </span><br>` + result.main.pressure;
-        humidityElem.innerHTML = `<span>Umidade: </span><br>` +result.main.humidity;
-        temp_maxElem.innerHTML = `<span>Temperatura Máxima: </span>` +result.main.temp_max;
-        temp_minElem.innerHTML = `<span>Temperatura Mínima: </span>` +result.main.temp_min;
+        humidityElem.innerHTML = `<span>Umidade: </span><br>` + result.main.humidity;
+        temp_maxElem.innerHTML = `<span>Temperatura Máxima: </span>` + result.main.temp_max;
+        temp_minElem.innerHTML = `<span>Temperatura Mínima: </span>` + result.main.temp_min;
+        feels_likeElem.innerHTML = `<span>Sensação Térmica: </span>` + result.main.feels_like;
     })
     .catch(function (err) {
         console.error(err);
