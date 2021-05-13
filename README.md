@@ -1,3 +1,3 @@
 # weather-extension
 
-Aplicação que exibe informações recebidas de uma API de tempo
+Aplicação Web em JS que exibe informações recebidas de uma API de tempo
